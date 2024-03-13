@@ -1,4 +1,4 @@
-import { Grid, HStack, Icon } from '@chakra-ui/react'
+import { Grid, Icon } from '@chakra-ui/react'
 import { IconType } from "react-icons"
 import { Platform } from '../hooks/useGames'
 import {
