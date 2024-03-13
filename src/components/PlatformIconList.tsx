@@ -1,4 +1,4 @@
-import { HStack, Icon } from '@chakra-ui/react'
+import { Grid, HStack, Icon } from '@chakra-ui/react'
 import { IconType } from "react-icons"
 import { Platform } from '../hooks/useGames'
 import {
@@ -45,11 +45,11 @@ const PlatformIconList = ({platforms}: Props) => {
     };
 
   return (
-    <HStack marginY={1}>
+    <Grid templateColumns='repeat(6, 1fr)' gap={1}>
       {platforms.map(({ platform }) => (
         <Icon key={platform.id} as={iconMap[platform.name]} color='gray.500' fontSize={25} />
       ))}
-    </HStack>
+    </Grid>
   );
 }
 
