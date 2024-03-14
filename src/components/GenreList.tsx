@@ -1,5 +1,5 @@
 import useGenres, { Genre } from '../hooks/useGenres';
-import { Button, HStack, Image, List, ListItem, Spinner } from '@chakra-ui/react';
+import { Box, Button, HStack, Image, List, ListItem, Spinner } from '@chakra-ui/react';
 import { getCroppedImage } from '../services/image.url';
 
 interface Props{
@@ -18,7 +18,9 @@ const {data, isLoading} = useGenres();
         <ListItem key={g.id} paddingY='5px'>
           <HStack>
             <Image src={getCroppedImage(g.image_background)} boxSize="35px" borderRadius="4px" />
+            <Box>
             <Button fontWeight={g.id === selectedGenre?.id ? 'bold' : 'normal'} fontSize='lg' variant='link' onClick={()=>handleGenreClick(g)}>{g.name}</Button>
+            </Box>
           </HStack>
         </ListItem>
       ))}
