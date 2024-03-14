@@ -1,6 +1,5 @@
 import { Grid, Icon } from '@chakra-ui/react'
 import { IconType } from "react-icons"
-import { Platform } from '../hooks/useGames'
 import {
   FaWindows,
   FaApple,
@@ -20,6 +19,7 @@ import {
 } from "react-icons/si"; 
 import { RiXboxLine } from "react-icons/ri";
 import { LiaXbox } from "react-icons/lia";
+import { Platform } from '../hooks/usePlatforms';
 
 interface Props {
   platforms: {platform: Platform}[]
