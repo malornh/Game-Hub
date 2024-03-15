@@ -20,7 +20,7 @@ const [selectedOrder, setSelectedOrder] = useState('Relevance');
     return (
       <Menu>
         <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-          <div>{'Order by: ' + selectedOrder}</div>
+          <div>{selectedOrder}</div>
         </MenuButton>
         <MenuList>
           {sortOrders.map((order) => (
