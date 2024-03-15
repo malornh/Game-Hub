@@ -3,6 +3,11 @@ import useData from "./useData";
 import { Genre } from "./useGenres";
 import { Platform } from "./usePlatforms";
 
+export interface Screenshot{
+    id: number,
+    image: string
+}
+
 export interface Game{
     id: number,
     name: string,
@@ -10,7 +15,8 @@ export interface Game{
     platforms: {platform: Platform}[],
     metacritic: number,
     genres: Genre[],
-    rating_top: number
+    rating_top: number,
+    short_screenshots: Screenshot[]
 }
 
 const useGames = (gameQuery: GameQuery) =>
