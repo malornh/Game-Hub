@@ -8,24 +8,23 @@ interface Props{
 }
 
 const MouseOnImage = ({short_screenshots}: Props) => {
-const [image, setImage] = useState(short_screenshots[1].image);
+const [imageIndex, setImageIndex] = useState(1);
 
 return (
-  <Box position="relative">
-    <Image src={getCroppedImage(image)} alt="Game screenshot" />
+  <Box position="relative" onClick={()=> imageIndex === 5 ? setImageIndex(1) : setImageIndex(imageIndex+1)}>
+    <Image src={getCroppedImage(short_screenshots[imageIndex].image)} alt="Game screenshot" />
     <HStack
       position="absolute"
       top="90%"
       left="50%"
       transform="translate(-50%, -50%)">
       {short_screenshots
-        .map((s) => (
+        .map((_, index) => (
           <Box
-            onMouseEnter={()=>setImage(s.image)}
-            key={s.image}
+            onMouseEnter={()=>setImageIndex(index)}
             width="45px"
             height="20px"
-            bg={image === s.image ? 'rgba(255, 0, 0, 0.8)' : 'rgba(128, 128, 128, 0.8)'}
+            bg={imageIndex === index ? 'rgba(255, 0, 0, 0.8)' : 'rgba(128, 128, 128, 0.8)'}
             borderRadius="15px"
           />
         ))
