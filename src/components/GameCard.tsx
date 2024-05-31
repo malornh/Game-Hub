@@ -6,6 +6,7 @@ import { getCroppedImage } from '../services/image.url'
 import Emoji from './Emoji'
 import { useState } from 'react'
 import MouseOnImage from './MouseOnImage'
+import PreloadImages from './PreloadImage'
 
 interface Props{
     game: Game
@@ -13,6 +14,7 @@ interface Props{
 
 const GameCard = ({game}: Props) => {
 const [mouseOnImage, setMouseOnImage] = useState(false);
+const imageUrls = game.short_screenshots.map(ss => getCroppedImage(ss.image));
 
   return (
     <Card>
@@ -24,6 +26,7 @@ const [mouseOnImage, setMouseOnImage] = useState(false);
          : 
           <Image src={getCroppedImage(game.background_image)} />
         }
+         <PreloadImages images={imageUrls} />
       </Box>
       <CardBody>
         <HStack justifyContent="space-between" marginBottom={3}>
