@@ -10,6 +10,14 @@ interface Props{
 const MouseOnImage = ({short_screenshots}: Props) => {
 const [imageIndex, setImageIndex] = useState(1);
 
+function countPictures(num: number) {
+  if(num<=6)
+    {
+      return num;
+    }
+    return 6;
+}
+
 return (
   <Box position="relative" onClick={()=> imageIndex === 5 ? setImageIndex(1) : setImageIndex(imageIndex+1)}>
     <Image src={getCroppedImage(short_screenshots[imageIndex].image)} alt="Game screenshot" />
@@ -28,7 +36,7 @@ return (
             borderRadius="15px"
           />
         ))
-        .slice(1, 6)}
+        .slice(1, countPictures(short_screenshots.length))}
     </HStack>
   </Box>
 );
