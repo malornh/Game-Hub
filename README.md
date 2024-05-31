@@ -1,5 +1,7 @@
 # React + TypeScript + Vite
 
+The project's data is sourced solely from https://rawg.io/apidocs.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
