@@ -9,11 +9,11 @@ interface Props{
 const SortSelector = ({onSelectSortOrder}: Props) => {
 const sortOrders = [
     {value: '', label: 'Relevance'},
-    {value: 'name', label: 'Name'},
+    {value: '-name', label: 'Name'},
     {value: '-added', label: 'Date added'},
     {value: 'released', label: 'Newest released'},
     {value: '-released', label: 'Oldest released'},
-    {value: 'metacritic', label: 'Popularity'}
+    {value: '-metacritic', label: 'Popularity'}
 ];
 const [selectedOrder, setSelectedOrder] = useState('Relevance');
 
