@@ -44,9 +44,11 @@ const PlatformIconList = ({platforms}: Props) => {
         "Xbox 360": LiaXbox,
     };
 
+    const knownPlatforms = platforms.filter(({ platform }) => iconMap[platform.name]);
+
   return (
     <Grid templateColumns='repeat(6, 1fr)' gap={1}>
-      {platforms.map(({ platform }) => (
+      {knownPlatforms.map(({ platform }) => (
         <Icon key={platform.id} as={iconMap[platform.name]} color='gray.500' fontSize={25} />
       ))}
     </Grid>
